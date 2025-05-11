@@ -1,4 +1,4 @@
-apiVersion: argoproj.io/v1alpha1 # TODO: CHECK
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: shoppinglist-argo-application
@@ -9,7 +9,7 @@ spec:
     repoURL: https://github.com/arudol/shoppinglist_cluster
     targetRevision: HEAD
     path: app
-  destintion: 
+  destination: 
     server: https://kubernetes.default.svc # this is an internal service name of API server, use because argocd is running in the same cluster
     namespace: shoppinglist
 
