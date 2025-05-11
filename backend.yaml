@@ -4,7 +4,7 @@ metadata:
   name: shoppinglist-argo-backend
   namespace: argocd
 spec: 
-  project: shoppinglist
+  project: default
   source: 
     repoURL: https://github.com/arudol/shoppinglist_cluster
     targetRevision: HEAD
