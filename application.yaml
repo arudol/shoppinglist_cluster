@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1 # TODO: CHECK
+kind: Application
+metadata:
+  name: shoppinglist-argo-application
+  namespace: argocd
+spec: 
+  project: shoppinglist
+  source: 
+    repoURL: https://github.com/arudol/shoppinglist_cluster
+    targetRevision: HEAD
+    path: app
+  destintion: 
+    server: https://kubernetes.default.svc # this is an internal service name of API server, use because argocd is running in the same cluster
+    namespace: shoppinglist
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true # if namespace doesn't exist, create
+    automated: 
+      selfHeal: true # overwrite manual changes
+      prune: true # deletes services if they're not part of config anymore
