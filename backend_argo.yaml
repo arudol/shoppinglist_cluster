@@ -8,7 +8,7 @@ spec:
   source: 
     repoURL: https://github.com/arudol/shoppinglist_cluster
     targetRevision: HEAD
-    path: mongodb
+    path: backend/mongo_deployment.yaml
   destination: 
     server: https://kubernetes.default.svc # this is an internal service name of API server, use because argocd is running in the same cluster
     namespace: shoppinglist
