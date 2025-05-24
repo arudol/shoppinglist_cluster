@@ -9,7 +9,7 @@ spec:
     repoURL: https://github.com/arudol/shoppinglist_cluster
     targetRevision: HEAD
     path: backend
-    exclude: '{mongo_deployment_with_volume.yaml, persistent_volume.yaml}'
+    exclude: '{mongo_statefulset_with_volume.yaml, persistent_volume.yaml}'
   destination: 
     server: https://kubernetes.default.svc # this is an internal service name of API server, use because argocd is running in the same cluster
     namespace: shoppinglist
